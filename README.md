@@ -10,4 +10,5 @@ Scopul aplicației:
 -	Afișare backtrace
 
 	Vom crea o aplicație în C/C++ care vom lua ca argument un fișier executabil pe care îl vom lansa pentru a-i putea observa și controla execuția prin funcționalitățile menționate mai sus.
+
 	Vom folosi utilitarul ptrace.

@@ -1,17 +1,14 @@
-#include <iostream>
+#include <stdio.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <sys/ptrace.h>
+#include <sys/user.h>
+#include <unistd.h>
 
-class Debugger
-{
-public:
-    Debugger (std::string ProgName, pid_t Pid) :
-     ProgName{std::move(ProgName)}, 
-     Pid{Pid} {}
+struct break_point;
 
-    void run();
-    void handle_command(const std::string& line);
+typedef struct break_point BREAK_POINT;
 
-private:
-    std::string ProgName;
-    pid_t Pid;
 
-};
+void run_debugger(pid_t child_pid);
+void run_target(const char* programname);

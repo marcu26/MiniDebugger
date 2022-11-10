@@ -28,4 +28,3 @@ instructiune intalnita.
 
 ### Architectural Diagram
 ![ArchitecturalDiagram](https://user-images.githubusercontent.com/78821603/201227783-5eb91b0f-4b6f-4550-8df4-9ae4ffe2a4e1.jpeg)
-

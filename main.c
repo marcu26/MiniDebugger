@@ -1,4 +1,3 @@
-#include <string.h>
 #include <stdio.h>
 #include <stdarg.h>
 #include <stdlib.h>
@@ -11,100 +10,173 @@
 #include <sys/user.h>
 #include <unistd.h>
 #include <errno.h>
-#include <sys/personality.h>
+#include <string.h>
+#include "debuglib.h"
 
-/* Print a message to stdout, prefixed by the process ID
- */
-void procmsg(const char *format, ...)
-{
-    va_list ap;
-    fprintf(stdout, "[%d] ", getpid());
-    va_start(ap, format);
-    vfprintf(stdout, format, ap);
-    va_end(ap);
-}
+// void procmsg(const char* format, ...)
+// {
+//     va_list ap;
+//     fprintf(stdout, "[%d] ", getpid());
+//     va_start(ap, format);
+//     vfprintf(stdout, format, ap);
+//     va_end(ap);
+// }
 
-void run_target(const char *programname)
-{
-    procmsg("target started. will run '%s'\n", programname);
+// void run_target(const char* programname)
+// {
+//     procmsg("target started. will run '%s'\n", programname);
 
-    /* Allow tracing of this process */
-    if (ptrace(PTRACE_TRACEME, 0, 0, 0) < 0)
-    {
-        perror("ptrace");
-        return;
-    }
+//     /* Allow tracing of this process */
+//     if (ptrace(PTRACE_TRACEME, 0, 0, 0) < 0) {
+//         perror("ptrace");
+//         return;
+//     }
 
-    /* Replace this process's image with the given program */
-    execl(programname, programname, 0);
-}
+//     /* Replace this process's image with the given program */
+//     execl(programname, programname, (char *)NULL);
+// }
+
+// void run_debugger(pid_t child_pid)
+// {
+//     int wait_status;
+//     struct user_regs_struct regs;
+
+//     procmsg("debugger started\n");
+
+//     /* Wait for child to stop on its first instruction */
+//     wait(&wait_status);
+
+//     /* Obtain and show child's instruction pointer */
+//     ptrace(PTRACE_GETREGS, child_pid, 0, &regs);
+//     procmsg("Child started. RIP = 0x%016x\n", regs.rip);
+
+//     long addr = regs.rip + 0x0000000000001158;//0x004000da;
+//     unsigned data = ptrace(PTRACE_PEEKTEXT, child_pid, (void*)addr, 0);
+//     procmsg("Original data at 0x%016x: 0x%016x\n", addr, data);
+
+//     //test
+//     unsigned data_u = data;
+//     procmsg("test data_u: 0x%08x\n", data_u);
+
+//     /* Write the trap instruction 'int 3' into the address */
+//     long data_with_trap = (data & 0xFFFFFFFFFFFFFF00) | 0xCC;
+//     ptrace(PTRACE_POKETEXT, child_pid, (void*)addr, (void*)data_with_trap);
+
+//     /* See what's there again... */
+//     long readback_data = ptrace(PTRACE_PEEKTEXT, child_pid, (void*)addr, 0);
+//     procmsg("After trap,set breakpoint, data at 0x%016x: 0x%016x\n", addr, readback_data);
+
+//     /* Let the child run to the breakpoint and wait for it to
+//     ** reach it
+//     */
+//     ptrace(PTRACE_CONT, child_pid, 0, 0);
+
+//     //wait to breakpoint
+//     wait(&wait_status);
+//     if (WIFSTOPPED(wait_status)) {
+//         procmsg("Child got a signal: %s\n", strsignal(WSTOPSIG(wait_status)));
+//     }
+//     else {
+//         perror("wait");
+//         return;
+//     }
+
+//     /* See where the child is now */
+//     ptrace(PTRACE_GETREGS, child_pid, 0, &regs);
+//     procmsg("Child stopped at RIP = 0x%016x\n", regs.rip);
+
+//     /* Remove the breakpoint by restoring the previous data
+//     ** at the target address, and unwind the EIP back by 1 to
+//     ** let the CPU execute the original instruction that was
+//     ** there.
+//     */
+//     int result = ptrace(PTRACE_POKETEXT, child_pid, (void*)addr, (void*)data);
+//     procmsg("poketext origin  back result %d\n", result);
+// /* See what's there again... */
+//      readback_data = ptrace(PTRACE_PEEKTEXT, child_pid, (void*)addr, 0);
+//      procmsg("After restore, data at 0x%llx: 0x%llx\n", addr, readback_data);
+//      int offset = 0;
+//      for(offset = 1; offset < 25; offset++) {
+//        readback_data = ptrace(PTRACE_PEEKTEXT, child_pid, (void*)(addr+offset), 0);
+//        procmsg("After restore, data at 0x%llx: 0x%llx\n", addr+offset, readback_data);
+//      }
+
+
+
+//     regs.rip -= 1;
+//     ptrace(PTRACE_SETREGS, child_pid, 0, &regs);
+
+//     /* The child can continue running now */
+//     ptrace(PTRACE_CONT, child_pid, 0, 0);
+
+//     wait(&wait_status);
+//     if (WIFEXITED(wait_status)) {
+//         procmsg("Child exited\n");
+//     } else if(WIFSIGNALED(wait_status)) {
+//     procmsg("signal !!!\n");
+//     }
+//     else {
+//         procmsg("Unexpected signal. %s \n",  strsignal(WSTOPSIG(wait_status)));
+//     }
+//  } 
 
 void run_debugger(pid_t child_pid)
 {
-    int wait_status;
-    unsigned icounter = 0;
     procmsg("debugger started\n");
 
     /* Wait for child to stop on its first instruction */
-    wait(&wait_status);
-    // load address : 55555555400
-    ptrace(PTRACE_POKEDATA, child_pid, (u_int8_t)0x555555555149, 0xCC); //load address + main offset in executable
-    // wait(&wait_status);
-    // ptrace(PTRACE_CONT, child_pid, 0, 0);
+    wait(0);
+    long first_instruction = get_child_eip(child_pid);
+    procmsg("child now at EIP = 0x%08x\n", get_child_eip(child_pid));
 
-    // int options = 0;
-    // waitpid(child_pid, &wait_status, options);
+    /* Create breakpoint and run to it*/
+    debug_breakpoint* bp = create_breakpoint(child_pid, (void*)0x0000000000401cb5);
+    procmsg("breakpoint created\n");
+    ptrace(PTRACE_CONT, child_pid, 0, 0);
+    wait(0);
 
-    while (WIFSTOPPED(wait_status))
-    {
-        icounter++;
-        struct user_regs_struct regs;
-        ptrace(PTRACE_GETREGS, child_pid, 0, &regs);
-        unsigned instr = ptrace(PTRACE_PEEKTEXT, child_pid, regs.rip, 0);
+    /* Loop as long as the child didn't exit */
+    while (1) {
+        /* The child is stopped at a breakpoint here. Resume its
+        ** execution until it either exits or hits the
+        ** breakpoint again.
+        */
+        procmsg("child stopped at breakpoint. EIP = 0x%08X\n", get_child_eip(child_pid));
+        procmsg("resuming\n");
+        int rc = resume_from_breakpoint(child_pid, bp);
 
-        procmsg("icounter = %u.  RIP = 0x%08x.  instr = 0x%08x\n", icounter, regs.rip, instr);
-
-        /* Make the child execute another instruction */
-        if (ptrace(PTRACE_SINGLESTEP, child_pid, 0, 0) < 0)
-        {
-            perror("ptrace");
-            return;
+        if (rc == 0) {
+            procmsg("child exited\n");
+            break;
         }
-
-        /* Wait for child to stop on its next instruction */
-        wait(&wait_status);
-        char input[30];
-        scanf("%s", input);
-        if (strcmp(input, "cont") == 0)
+        else if (rc == 1) {
             continue;
+        }
+        else {
+            procmsg("unexpected: %d\n", rc);
+            break;
+        }
     }
 
-    procmsg("the child executed %u instructions\n", icounter);
+
+    cleanup_breakpoint(bp);
 }
 
-int main(int argc, char **argv)
+int main(int argc, char** argv)
 {
     pid_t child_pid;
 
-    if (argc < 2)
-    {
+    if (argc < 2) {
         fprintf(stderr, "Expected a program name as argument\n");
         return -1;
     }
 
     child_pid = fork();
     if (child_pid == 0)
-    {
-        
-        personality(ADDR_NO_RANDOMIZE); 
         run_target(argv[1]);
-    }
     else if (child_pid > 0)
-    {
-            run_debugger(child_pid);
-    }
-    else
-    {
+        run_debugger(child_pid);
+    else {
         perror("fork");
         return -1;
     }

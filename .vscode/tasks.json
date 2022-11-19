@@ -9,6 +9,8 @@
 				"-fdiagnostics-color=always",
 				"-g",
 				"${file}",
+				"**.c",
+				"**.h",
 				//"${fileDirname}//**.c",
                 //"${fileDirname}//**.h",
 				"-o",

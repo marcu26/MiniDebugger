@@ -1,0 +1,1 @@
+/usr/bin/cc   -rdynamic CMakeFiles/dwdebuglink.dir/dwdebuglink.c.o  -o dwdebuglink  ../../lib/libdwarf/libdwarf.a 

@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/andrei/Desktop/libdwarf-0.5.0/src/bin/dwarfdump/dd_getopt.c
+config.h
+-
+stddef.h
+-
+stdio.h
+-
+string.h
+-
+dd_minimal.h
+/home/andrei/Desktop/libdwarf-0.5.0/src/bin/dwarfdump/dd_minimal.h
+dd_getopt.h
+/home/andrei/Desktop/libdwarf-0.5.0/src/bin/dwarfdump/dd_getopt.h
+
+/home/andrei/Desktop/libdwarf-0.5.0/src/bin/dwarfdump/dd_getopt.h
+
+/home/andrei/Desktop/libdwarf-0.5.0/src/bin/dwarfdump/dd_minimal.h
+
+/home/andrei/Desktop/libdwarf-0.5.0/test/test_getopt.c
+config.h
+/home/andrei/Desktop/libdwarf-0.5.0/test/config.h
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+dd_getopt.h
+/home/andrei/Desktop/libdwarf-0.5.0/test/dd_getopt.h
+dd_minimal.h
+/home/andrei/Desktop/libdwarf-0.5.0/test/dd_minimal.h
+
+config.h
+

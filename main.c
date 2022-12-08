@@ -12,6 +12,8 @@
 #include <errno.h>
 #include <string.h>
 #include "debuglib.h"
+#include <libdwarf-0/dwarf.h>
+#include <libdwarf-0/libdwarf.h>
 
 // void procmsg(const char* format, ...)
 // {

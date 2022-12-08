@@ -1,0 +1,11 @@
+libdwarf_la-dwarf_safe_strcpy.lo: dwarf_safe_strcpy.c \
+ /usr/include/stdc-predef.h ../../../config.h \
+ /usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h dwarf_safe_strcpy.h
+
+/usr/include/stdc-predef.h:
+
+../../../config.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h:
+
+dwarf_safe_strcpy.h:

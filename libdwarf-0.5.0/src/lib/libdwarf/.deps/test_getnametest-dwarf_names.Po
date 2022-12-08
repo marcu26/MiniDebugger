@@ -1,0 +1,9 @@
+../src/lib/libdwarf/test_getnametest-dwarf_names.o: \
+ ../src/lib/libdwarf/dwarf_names.c /usr/include/stdc-predef.h \
+ ../src/lib/libdwarf/dwarf.h ../src/lib/libdwarf/libdwarf.h
+
+/usr/include/stdc-predef.h:
+
+../src/lib/libdwarf/dwarf.h:
+
+../src/lib/libdwarf/libdwarf.h:

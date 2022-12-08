@@ -1,0 +1,27 @@
+libdwarf_la-dwarf_pubtypes.lo: dwarf_pubtypes.c \
+ /usr/include/stdc-predef.h ../../../config.h \
+ /usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h dwarf.h libdwarf.h \
+ libdwarf_private.h dwarf_base_types.h dwarf_opaque.h dwarf_error.h \
+ dwarf_types.h dwarf_global.h
+
+/usr/include/stdc-predef.h:
+
+../../../config.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h:
+
+dwarf.h:
+
+libdwarf.h:
+
+libdwarf_private.h:
+
+dwarf_base_types.h:
+
+dwarf_opaque.h:
+
+dwarf_error.h:
+
+dwarf_types.h:
+
+dwarf_global.h:

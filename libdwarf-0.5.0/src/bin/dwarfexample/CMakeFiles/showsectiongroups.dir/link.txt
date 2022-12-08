@@ -1,0 +1,1 @@
+/usr/bin/cc   -rdynamic CMakeFiles/showsectiongroups.dir/showsectiongroups.c.o  -o showsectiongroups  ../../lib/libdwarf/libdwarf.a 

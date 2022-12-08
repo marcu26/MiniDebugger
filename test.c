@@ -1,16 +1,17 @@
 #include <stdio.h>
 
-
-void do_stuff()
+void do_stuff(int my_arg)
 {
-    fprintf(stderr,"Hello,\n");
+    int my_local = my_arg + 2;
+    int i;
+
+    for (i = 0; i < my_local; ++i)
+        printf("i = %d\n", i);
 }
 
 
 int main()
 {
-    for (int i = 0; i < 4; ++i)
-        do_stuff();
-    fprintf(stderr,"world!\n");
+    do_stuff(2);
     return 0;
 }

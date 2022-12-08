@@ -1,0 +1,2 @@
+PASS sanitized() test
+PASS test_sanitized (exit status: 0)

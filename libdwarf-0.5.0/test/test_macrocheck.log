@@ -1,0 +1,32 @@
+  Macro unit count test1: 1
+  Macro Offsets start at 0x000000c8 and end at 0x000000c8
+  Macro Offsets internal unused space: 0x00000000
+  Macro Offsets total    unused space: 0x000007d0
+  Macro unit count test 2: 2
+  Macro Offsets start at 0x000000c8 and end at 0x000001c2
+  Macro Offsets internal unused space: 0x00000032
+  Macro Offsets total    unused space: 0x00000708
+
+  Expect an ERROR about overlap with the end of section
+  Macro unit count test 3: 3
+  Macro Offsets start at 0x00000000 and end at 0x00000834
+ ERROR: For offset 0x000007d0 2000 there is an overlap with the end of section 0x00000834 2100
+  Macro Offsets internal unused space: 0x00000064
+  Macro Offsets total    unused space: 0x00000064
+
+  Expect an ERROR about offset 50 having 2 primaries
+  and Expect an ERROR about offset 50 having 2
+  primaries and a secondary
+  and Expect an ERROR about crazy overlap 60
+
+  Macro unit count test 4: 3
+
+ERROR: For offset 0x00000032 50 there is a primary reference count of 0x00000002 2
+
+ERROR: For offset 0x00000032 50 there is a nonzero primary count of 0x00000002 2 with a secondary count of 0x00000001 1
+  Macro Offsets start at 0x00000032 and end at 0x000000c8
+ ERROR: For offset 0x0000003c 60 there is a crazy overlap with the previous end offset of 0x00000064 100 (previous start offset of 0x00000032) 50
+  Macro Offsets internal unused space: 0x00000082
+  Macro Offsets total    unused space: 0x000007bc
+PASS macrocheck selftest
+PASS test_macrocheck (exit status: 0)

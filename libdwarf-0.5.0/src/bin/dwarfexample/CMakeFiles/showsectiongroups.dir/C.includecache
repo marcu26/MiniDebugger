@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/andrei/Desktop/libdwarf-0.5.0/src/bin/dwarfexample/showsectiongroups.c
+config.h
+-
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+dwarf.h
+/home/andrei/Desktop/libdwarf-0.5.0/src/bin/dwarfexample/dwarf.h
+libdwarf.h
+/home/andrei/Desktop/libdwarf-0.5.0/src/bin/dwarfexample/libdwarf.h
+
+config.h
+
+src/lib/libdwarf/dwarf.h
+
+src/lib/libdwarf/libdwarf.h
+

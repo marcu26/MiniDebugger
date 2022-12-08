@@ -1,0 +1,1 @@
+/usr/bin/cc   -rdynamic CMakeFiles/selfsectionbitmaps.dir/__/src/bin/dwarfdump/dd_section_bitmaps.c.o CMakeFiles/selfsectionbitmaps.dir/test_section_bitmaps.c.o  -o selfsectionbitmaps 

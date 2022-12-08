@@ -1,0 +1,16 @@
+dwarfdumpLinux.sh start. values before starting up.
+topsrcdir 
+topblddir 
+DWTOPSRCDIR ..
+TOP topsrc .. topbld /home/andrei/Desktop/libdwarf-0.5.0/test/.. localsrc ../test
+Now top_srcdir  ..
+Now top_blddir  /home/andrei/Desktop/libdwarf-0.5.0/test/..
+start  test_dwarfdumpLinux.sh sanity check on ../test/testuriLE64ELf.obj
+Run: /home/andrei/Desktop/libdwarf-0.5.0/test/../src/bin/dwarfdump/dwarfdump -a -vvv  ../test/testuriLE64ELf.obj | head -n 700
+if update required, mv /home/andrei/Desktop/libdwarf-0.5.0/test/../test/junk.testuriLE64ELf.base ../test/testuriLE64ELf.base
+Fix Last Time to 0, mv /home/andrei/Desktop/libdwarf-0.5.0/test/../test/junk2.testuriLE64ELf.base /home/andrei/Desktop/libdwarf-0.5.0/test/../test/junk.testuriLE64ELf.base
+report file lengths
+  700 ../test/testuriLE64ELf.base
+  700 /home/andrei/Desktop/libdwarf-0.5.0/test/../test/junk.testuriLE64ELf.base
+ 1400 total
+PASS test_dwarfdumpLinux.sh (exit status: 0)

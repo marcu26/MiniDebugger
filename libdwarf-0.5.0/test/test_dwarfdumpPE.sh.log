@@ -1,0 +1,10 @@
+TOP topsrc .. topbld /home/andrei/Desktop/libdwarf-0.5.0/test/.. localsrc ../test
+start  test_dwarfdumpPE.sh sanity check on pe ../test/testobjLE32PE.exe
+Run: /home/andrei/Desktop/libdwarf-0.5.0/test/../src/bin/dwarfdump/dwarfdump -vvv -a  ../test/testobjLE32PE.exe | head -n 700
+if update required, mv /home/andrei/Desktop/libdwarf-0.5.0/test/../test/junk.testobjLE32PE.base ../test/testobjLE32PE.base
+Fix Last Time to 0, mv /home/andrei/Desktop/libdwarf-0.5.0/test/../test/junk2.testobjLE32PE.base /home/andrei/Desktop/libdwarf-0.5.0/test/../test/junk.testobjLE32PE.base
+report file lengths
+  700 ../test/testobjLE32PE.base
+  700 /home/andrei/Desktop/libdwarf-0.5.0/test/../test/junk.testobjLE32PE.base
+ 1400 total
+PASS test_dwarfdumpPE.sh (exit status: 0)

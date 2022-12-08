@@ -1,0 +1,19 @@
+argc: 1
+argv[0] = ./test_dwgetopt
+PASS getopt ltest1
+PASS getopt ltest2
+PASS getopt test5
+PASS getopt test1
+PASS getopt test 2
+PASS getopt test 3
+ERROR: option requires an argument. -- 'H'
+PASS getopt test6
+PASS getopt test7
+ERROR: invalid option -- 'x'
+PASS getopt test8
+ERROR: invalid long option '--bogusarg'
+PASS getopt test9
+ERROR: option '--simplelong' does not allow an argument
+PASS getopt test10
+PASS getopttest
+PASS test_dwgetopt (exit status: 0)

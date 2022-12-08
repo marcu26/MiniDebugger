@@ -1,0 +1,12 @@
+Entry test_canonical_append
+PASS 0
+PASS 1
+PASS 2
+PASS 3
+PASS 4
+PASS 5
+PASS 6
+PASS 7
+PASS 8
+PASS canonical path tests
+PASS test_canonical (exit status: 0)

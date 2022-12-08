@@ -1,0 +1,3 @@
+Entry test_safe_strcpy
+PASS dwarf_safe_strcpy tests
+PASS test_safestrcpy (exit status: 0)

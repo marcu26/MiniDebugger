@@ -1,0 +1,6 @@
+dwarfdump-dd_opscounttab.o: dd_opscounttab.c /usr/include/stdc-predef.h \
+ dd_opscounttab.h
+
+/usr/include/stdc-predef.h:
+
+dd_opscounttab.h:

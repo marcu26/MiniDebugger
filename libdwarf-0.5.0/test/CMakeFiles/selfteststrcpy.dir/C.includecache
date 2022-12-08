@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/andrei/Desktop/libdwarf-0.5.0/src/lib/libdwarf/dwarf_safe_strcpy.c
+config.h
+-
+stddef.h
+-
+dwarf_safe_strcpy.h
+/home/andrei/Desktop/libdwarf-0.5.0/src/lib/libdwarf/dwarf_safe_strcpy.h
+
+/home/andrei/Desktop/libdwarf-0.5.0/src/lib/libdwarf/dwarf_safe_strcpy.h
+
+/home/andrei/Desktop/libdwarf-0.5.0/test/test_safe_strcpy.c
+config.h
+-
+stdio.h
+-
+string.h
+-
+dwarf_safe_strcpy.h
+/home/andrei/Desktop/libdwarf-0.5.0/test/dwarf_safe_strcpy.h
+
+config.h
+

@@ -1,1 +1,0 @@
-/usr/bin/cc   -rdynamic CMakeFiles/jitreader.dir/jitreader.c.o  -o jitreader  ../../lib/libdwarf/libdwarf.a 

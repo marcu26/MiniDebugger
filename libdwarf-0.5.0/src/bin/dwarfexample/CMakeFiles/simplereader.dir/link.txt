@@ -1,1 +1,0 @@
-/usr/bin/cc   -rdynamic CMakeFiles/simplereader.dir/simplereader.c.o  -o simplereader  ../../lib/libdwarf/libdwarf.a 

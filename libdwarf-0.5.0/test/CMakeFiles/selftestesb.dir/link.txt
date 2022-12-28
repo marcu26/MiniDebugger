@@ -1,1 +1,0 @@
-/usr/bin/cc   -rdynamic CMakeFiles/selftestesb.dir/test_esb.c.o CMakeFiles/selftestesb.dir/__/src/bin/dwarfdump/dd_esb.c.o CMakeFiles/selftestesb.dir/__/src/bin/dwarfdump/dd_tsearchbal.c.o  -o selftestesb 

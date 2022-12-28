@@ -6,7 +6,7 @@ void do_stuff(int my_arg)
     int i;
 
     for (i = 0; i < my_local; ++i)
-        printf("i = %d\n", i);
+        printf("From do_sutff: i = %d\n", i);
 }
 
 

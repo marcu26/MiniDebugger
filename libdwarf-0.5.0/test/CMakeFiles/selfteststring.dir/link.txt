@@ -1,1 +1,0 @@
-/usr/bin/cc   -rdynamic CMakeFiles/selfteststring.dir/test_dwarfstring.c.o CMakeFiles/selfteststring.dir/__/src/lib/libdwarf/dwarf_string.c.o  -o selfteststring 

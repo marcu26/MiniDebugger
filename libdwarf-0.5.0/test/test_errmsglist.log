@@ -1,7 +1,0 @@
-Longest string length   110
-Longest string linenum  590
-Length of quoted areas  25299
-Length of static array  54723
-Expected length array   54723
-Sizeof() static array   54723
-PASS test_errmsglist (exit status: 0)

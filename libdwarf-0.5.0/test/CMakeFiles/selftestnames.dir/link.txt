@@ -1,1 +1,0 @@
-/usr/bin/cc   -rdynamic CMakeFiles/selftestnames.dir/test_getname.c.o CMakeFiles/selftestnames.dir/__/src/lib/libdwarf/dwarf_names.c.o  -o selftestnames 

@@ -50,7 +50,7 @@ void run_target(const char* programname)
 }
 
 
-long get_child_eip(pid_t pid)
+long get_child_rip(pid_t pid)
 {
     struct user_regs_struct regs;
     ptrace(PTRACE_GETREGS, pid, 0, &regs);

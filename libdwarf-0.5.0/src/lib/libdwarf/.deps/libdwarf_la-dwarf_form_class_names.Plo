@@ -1,8 +1,0 @@
-libdwarf_la-dwarf_form_class_names.lo: dwarf_form_class_names.c \
- /usr/include/stdc-predef.h ../../../config.h libdwarf.h
-
-/usr/include/stdc-predef.h:
-
-../../../config.h:
-
-libdwarf.h:

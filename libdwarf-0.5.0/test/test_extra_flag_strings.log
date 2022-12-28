@@ -1,3 +1,0 @@
-ERROR due to  trailing spaces before = in " =-1", line 231 ../src/lib/libdwarfp/dwarf_pro_log_extra_flag_strings.c
-ERROR  due to unknown string "minimum_instruction_lengty", line 195 ../src/lib/libdwarfp/dwarf_pro_log_extra_flag_strings.c
-PASS test_extra_flag_strings (exit status: 0)

@@ -1,8 +1,0 @@
-/usr/local/lib64/libdwarf.a
-/usr/local/lib/libdwarf.a
-/usr/local/lib/cmake/libdwarf/libdwarf-targets.cmake
-/usr/local/lib/cmake/libdwarf/libdwarf-targets-noconfig.cmake
-/usr/local/lib/cmake/libdwarf/libdwarf-config.cmake
-/usr/local/include/libdwarf/libdwarf.h
-/usr/local/bin64/dwarfdump
-/usr/local/lib64/dwarfdump.conf

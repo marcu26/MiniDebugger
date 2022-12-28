@@ -1,1 +1,0 @@
-/usr/bin/cc   -rdynamic CMakeFiles/selfregex.dir/test_regex.c.o CMakeFiles/selfregex.dir/__/src/bin/dwarfdump/dd_regex.c.o  -o selfregex 

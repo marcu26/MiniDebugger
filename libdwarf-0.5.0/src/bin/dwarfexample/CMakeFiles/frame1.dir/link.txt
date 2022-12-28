@@ -1,1 +1,0 @@
-/usr/bin/cc   -rdynamic CMakeFiles/frame1.dir/frame1.c.o  -o frame1  ../../lib/libdwarf/libdwarf.a 

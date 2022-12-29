@@ -37,6 +37,10 @@ typedef struct debug_breakpoint_t debug_breakpoint;
 */
 debug_breakpoint* create_breakpoint(pid_t pid, void* addr);
 
+void enable_breakpoint(pid_t pid, debug_breakpoint* bp);
+void disable_breakpoint(pid_t pid, debug_breakpoint* bp);
+
+
 
 /* Clean up the memory allocated for the given breakpoint.
 ** Note: this doesn't disable the breakpoint, just deallocates it.

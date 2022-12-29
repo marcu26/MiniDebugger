@@ -1,5 +1,10 @@
 {
     "files.associations": {
-        "debuglib.h": "c"
+        "debuglib.h": "c",
+        "dwarf.h": "c",
+        "dlfcn.h": "c",
+        "dl_find_object.h": "c",
+        "features.h": "c",
+        "elf.h": "c"
     }
 }

@@ -80,7 +80,7 @@ struct debug_breakpoint_t {
 /* Enable the given breakpoint by inserting the trap instruction at its 
 ** address, and saving the original data at that location.
 */
-static void enable_breakpoint(pid_t pid, debug_breakpoint* bp)
+void enable_breakpoint(pid_t pid, debug_breakpoint* bp)
 {
     assert(bp);
     bp->orig_data = ptrace(PTRACE_PEEKTEXT, pid, bp->addr, 0);
@@ -91,7 +91,7 @@ static void enable_breakpoint(pid_t pid, debug_breakpoint* bp)
 /* Disable the given breakpoint by replacing the byte it points to with
 ** the original byte that was there before trap insertion.
 */
-static void disable_breakpoint(pid_t pid, debug_breakpoint* bp)
+void disable_breakpoint(pid_t pid, debug_breakpoint* bp)
 {
     assert(bp);
     long data = ptrace(PTRACE_PEEKTEXT, pid, bp->addr, 0);

@@ -28,3 +28,13 @@ instructiune intalnita.
 
 ### Architectural Diagram
 ![ArchitecturalDiagram](https://user-images.githubusercontent.com/78821603/201227783-5eb91b0f-4b6f-4550-8df4-9ae4ffe2a4e1.jpeg)
+
+### Executare
+
+- cd build 
+- "cmake .." (utilitarul creeaza Makefile)
+- make (se creeaza main cu o sursa de test)
+- ./main executabil_c/c++
+- executabilul trebuie compilat cu flagurile -g-dwarf2 -O0
+- g-dwarf2 - o versiune de dwarf mai usor de citit
+- O0 - no optimization

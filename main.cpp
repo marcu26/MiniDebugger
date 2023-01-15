@@ -1,8 +1,6 @@
-#include <sys/personality.h>
 #include <unistd.h>
+#include <sys/personality.h>
 
-
-#include "linenoise.h"
 #include "debugger.hpp"
 
 #pragma region utils
@@ -15,7 +13,6 @@ void execute_debugee (const std::string& prog_name)
     }
     execl(prog_name.c_str(), prog_name.c_str(), nullptr);
 }
-
 #pragma endregion
 
 

@@ -1,17 +1,32 @@
-
-# Consider dependencies only in project.
-set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
-
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
+  "C"
+  "CXX"
   )
+# The set of files for implicit dependencies of each language:
+set(CMAKE_DEPENDS_CHECK_C
+  "/home/eu/Desktop/Develop/PSOP-Debugger/ext/linenoise/linenoise.c" "/home/eu/Desktop/Develop/PSOP-Debugger/build/CMakeFiles/main.dir/ext/linenoise/linenoise.c.o"
+  )
+set(CMAKE_C_COMPILER_ID "GNU")
 
-# The set of dependency files which are needed:
-set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/andrei/Desktop/PSOP-Debugger/ext/linenoise/linenoise.c" "CMakeFiles/main.dir/ext/linenoise/linenoise.c.o" "gcc" "CMakeFiles/main.dir/ext/linenoise/linenoise.c.o.d"
-  "/home/andrei/Desktop/PSOP-Debugger/breakpoint.cpp" "CMakeFiles/main.dir/breakpoint.cpp.o" "gcc" "CMakeFiles/main.dir/breakpoint.cpp.o.d"
-  "/home/andrei/Desktop/PSOP-Debugger/debugger.cpp" "CMakeFiles/main.dir/debugger.cpp.o" "gcc" "CMakeFiles/main.dir/debugger.cpp.o.d"
-  "/home/andrei/Desktop/PSOP-Debugger/main.cpp" "CMakeFiles/main.dir/main.cpp.o" "gcc" "CMakeFiles/main.dir/main.cpp.o.d"
+# The include file search paths:
+set(CMAKE_C_TARGET_INCLUDE_PATH
+  "../ext/libelfin"
+  "../ext/linenoise"
+  "../include"
+  )
+set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/eu/Desktop/Develop/PSOP-Debugger/breakpoint.cpp" "/home/eu/Desktop/Develop/PSOP-Debugger/build/CMakeFiles/main.dir/breakpoint.cpp.o"
+  "/home/eu/Desktop/Develop/PSOP-Debugger/debugger.cpp" "/home/eu/Desktop/Develop/PSOP-Debugger/build/CMakeFiles/main.dir/debugger.cpp.o"
+  "/home/eu/Desktop/Develop/PSOP-Debugger/main.cpp" "/home/eu/Desktop/Develop/PSOP-Debugger/build/CMakeFiles/main.dir/main.cpp.o"
+  )
+set(CMAKE_CXX_COMPILER_ID "GNU")
+
+# The include file search paths:
+set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "../ext/libelfin"
+  "../ext/linenoise"
+  "../include"
   )
 
 # Targets to which this target links.

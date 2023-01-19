@@ -16,6 +16,24 @@ Scopul aplicației:
 -   Scop educativ - invatarea despre workflow-ul unei aplicatii in rulare
 
 
+### Commands in program:
+-   break + function_name - pune un breakpoint la inceputul unei functii (dupa prologul acesteia)
+-   break + 0xAddress - pune un breakpoint la o anumita adresa
+-   break + <line_number>:<source_filename> - pune un breakpoint la o anumita linie dintr-o sursa
+-   cont - continua executia pana la urmatorul breakpoint
+-   finish - continua executia pana la finalul functiei curente (atentie, executia trebuie sa fi trecut de prima instructiune a functiei de dupa prolog) - face step_out
+-   next - trece peste urmatoarea instructiune, indiferent daca este un apel de functie sau nu - face step_over
+-   step - trece peste urmatoarea instructiune, dar daca este un apel de functie, va face step_in
+-   register + dump  - dumps all registers contents
+-   register + read <register_name> - afiseaza continutul unui anumit registru
+-   register + write <register_name> - suprascrie continutul unui registru
+-   memory + read 0xAddress - afiseaza datele de la o anumita adresa
+-   memory + write 0xAddress value - suprascrie datele de la adresa data cu valoarea data
+
+
+
+-   symbol + keyword - keyword poate fi un nume de functie, nume de sectiune, de fisier
+
 ### Detalii de implementare
 - Vom folosi ptrace cu flag-ul PTRACE_TRACEME in procesul copil pentru a semnaliza ca va fi 'urmarit' de parinte, adica orice semnal va fi transmis acestui
 semnal, parintele va fi notificat prin statusul returnat de wait.
@@ -29,7 +47,7 @@ instructiune intalnita.
 ### Architectural Diagram
 ![ArchitecturalDiagram](https://user-images.githubusercontent.com/78821603/201227783-5eb91b0f-4b6f-4550-8df4-9ae4ffe2a4e1.jpeg)
 
-### Executare
+### Compilare
 
 - cd build 
 - "cmake .." (utilitarul creeaza Makefile)

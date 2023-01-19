@@ -76,6 +76,8 @@ enum class symbol_type {
 
         auto read_memory(uint64_t address) -> uint64_t ;
         void write_memory(uint64_t address, uint64_t value);
+        void print_backtrace();
+        void read_variables();
 
         std::string m_prog_name;
         pid_t m_pid;
